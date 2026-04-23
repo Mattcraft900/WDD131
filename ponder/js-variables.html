@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Variables</title>
+    <script>
+        // Javascript land
+
+        // Comments (they work like this)
+        /*
+        Multi-line comment
+        still going
+        aiefonq
+        */ 
+
+        // Variables
+        // "let" functions [kind of] the same as "var" but is more industry standard nowadays
+        // "let" honors the variable scope upon creation, when "var" doesn't always
+        // Use camel case for variable names (nameOfTheVariable)
+        let myAge = 25;
+        let myName = "Matthew"
+        // No keywords when re-assigning a variable
+        myName = "Matthew Hilton";
+        myAge = myAge + 1; // etc.
+
+        console.log(myAge) // This works the same as print() in python
+
+        myAge = "Twenty-five" // JS variables are NOT type-specific
+        console.log(myAge)
+
+        // Constants
+        // Use [whatever this format is called] for constant names (NAME_OF_THE_VARIABLE)
+        const MY_NAME = "Matthew Hilton";
+
+        // Scope
+        if(nyName === "Matthew Hilton") {
+            let greeting = "Welcome"; // This only exists inside this "if" statement
+            var greeting2 = "Hello"; // This is a global variable (DON'T DO THIS)
+            // "var" still gets contained within functions, but not blocks like "if" or "for" or "try"
+        }
+
+    </script>
 </head>
 <body>
     
