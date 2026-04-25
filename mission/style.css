@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 25px;
+    border: 1px solid #ccc;
+    padding: 30px 0 10px 0;
+    max-width: 600px;
+}
+
+main > * {
+    margin: 0 15% 0 15%;
+}
+
+.title {
+    font-weight: 500; /* This font doesn't seem to support any weights other than normal or bold... Idk what font is used in the example but without scrounging around on Google Font for a few hours, this is as close as it's gonna get*/
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 30px 0 15px 0;
+    font-size: 30px;
+}
+
+.subtitle {
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #1480c8;
+    font-size: 12px;
+    text-align: center;
+}
+
+hr {
+    width: 70%;
+    height: 1px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: #ddd;
+}
+
+p, h3, li {
+    font-size: 14px;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-weight: normal;
+    font-style: italic;
+}
+
+li {
+    /* text-indent: 30px; */ 
+    /* The above doesn't cause the numberals to move over with the tex, but let the record show that I tried!*/
+    margin-left: 30px;
+}
+
+.logo {
+    display: inline-block;
+    width: 25%;
+    margin: 30px 40%;
+}
