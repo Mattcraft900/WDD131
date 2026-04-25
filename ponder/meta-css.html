@@ -7,6 +7,62 @@
     <meta name="author" content="Matthew Hilton">
     <title>Meta CSS</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 40px 10%;
+        }
+
+        main {
+            display: inline-block;
+            background-color: #ddd;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        #content {
+            border: 1px solid #ccc;
+            padding: 40px;
+            justify-items: center;
+        }
+
+        h1, h2 {
+            font-weight: bolder;
+            text-align: center;
+            margin: 15px;
+        }
+
+        #content > p {
+            color: #2171a5;
+            font-size: 1.2em;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        hr {
+            background-color: #2171a5;
+            color: #2171a5;
+            width: 80%;
+            height: 3px;
+            border-width: 0px;
+            margin: 20px 0;
+        }
+
+        img {
+            display: inline-block;
+            margin: 0 20%;
+            width: 60%;
+        }
+
+        li {
+            margin: 0 20%;
+            list-style: none;
+            line-height: 1.4;
+        }
 
     </style>
 </head>
