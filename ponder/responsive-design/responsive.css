@@ -13,9 +13,6 @@ footer {
   padding: 1rem;
   background-color: lightblue;
 }
-main {
-    display: grid;
-}
 h1 {
     text-align: center;
 }
@@ -55,6 +52,7 @@ footer {
 
 @media screen and (min-width: 600px) {
     main {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .menu-btn {
