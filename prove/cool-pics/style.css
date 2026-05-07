@@ -1,0 +1,56 @@
+/* Basic resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Actual CSS */
+body {
+    background-color: #ccc;
+    color: black;
+}
+
+main {
+    margin: 0 5%
+}
+
+header, footer {
+    background-color: #2a81e2;
+    color: white;
+}
+
+.gallery {
+    display: grid;
+    column-gap: 2.5%;
+    row-gap: 40px;
+}
+
+.gallery>img {
+    box-shadow: 5px 5px 5px black;
+    border: 5px solid white;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+
+@media screen and (min-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5%;
+    }
+
+    main {
+        
+    }
+}
