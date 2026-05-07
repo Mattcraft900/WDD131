@@ -4,53 +4,89 @@
     margin: 0;
     padding: 0;
 }
-a {
+a, a:visited {
     color: inherit;
-    text-decoration: inherit;
+    text-decoration: underline;
 }
+
 
 /* Actual CSS */
 body {
     background-color: #ccc;
     color: black;
 }
-
 main {
-    margin: 0 5%
+    margin: 0 5%;
 }
-
 header, footer {
     background-color: #2a81e2;
     color: white;
+    padding: 5px;
+    text-align: center;
 }
-
+.header-title {
+    margin: 20px;
+}
+.menu-btn {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+.menu-btn:hover, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+nav {
+    display: flex;
+    justify-self: center;
+}
+nav>a {
+    margin: 0 10px;
+    display: none;
+}
+.page-title {
+    text-align: center;
+    margin: 20px;
+}
 .gallery {
     display: grid;
     column-gap: 2.5%;
     row-gap: 40px;
+    margin-bottom: calc(max(10%, 50px));
 }
-
 .gallery>img {
     box-shadow: 5px 5px 5px black;
     border: 5px solid white;
-    object-fit: cover;
+    width: calc(min(100%, 262px));
     aspect-ratio: 1/1;
+    object-fit: cover;
+    justify-self: center;
 }
 
 
+/* Styling for bigger screens */
+/* Tablets */
 @media screen and (min-width: 600px) {
     .gallery {
         grid-template-columns: 1fr 1fr;
+        margin-top: 30px;
     }
 }
-
+/* Desktops */
 @media screen and (min-width: 1000px) {
+    .menu-btn {
+        display: none;
+    }
+    nav>a {
+        display: inline;
+    }
+    main {
+        margin: 0 20%;
+    }
     .gallery {
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 5%;
-    }
-
-    main {
-        
     }
 }
