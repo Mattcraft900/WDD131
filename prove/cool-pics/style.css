@@ -26,6 +26,7 @@ header, footer {
 }
 .header-title {
     margin: 20px;
+    font-size: 2.5em;
 }
 .menu-btn {
     border: none;
@@ -33,18 +34,21 @@ header, footer {
     color: inherit;
     font-size: 1.1em;
     text-decoration: underline;
+    margin-bottom: 5px;
 }
 .menu-btn:hover, a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-nav {
-    display: flex;
-    justify-self: center;
-}
-nav>a {
-    margin: 0 10px;
+.menu {
     display: none;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+.menu>a {
+    margin: 15px;
+    font-size: 1.2em;
 }
 .page-title {
     text-align: center;
@@ -64,6 +68,33 @@ nav>a {
     object-fit: cover;
     justify-self: center;
 }
+.gallery>img:hover, .close-btn:hover {
+    cursor: pointer;
+}
+dialog {
+    max-width: calc(min(80vw, 800px));
+    position: relative;
+    margin: 10vh auto;
+    padding: 5px;
+    border: none;
+}
+dialog>img {
+    max-width: 100%;
+    border: 5px #DDD;
+}
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
+    width: 2em;
+    aspect-ratio: 1/1;
+    text-align: center;
+    background-color: #AAA;
+}
+.close-btn:focus {
+    border: none;
+}
 
 
 /* Styling for bigger screens */
@@ -79,8 +110,13 @@ nav>a {
     .menu-btn {
         display: none;
     }
-    nav>a {
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
+    .menu>a {
         display: inline;
+        margin: 0 10px 10px 10px;
     }
     main {
         margin: 0 20%;
