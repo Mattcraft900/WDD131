@@ -36,7 +36,7 @@ let newNames = names.map((name) => {
 console.log(newNames);
 
 // .filter()
-let filteredArray = name.filter(name => {
+let filteredArray = names.filter(name => {
     // filter returns booleans. If true, keep this item, if false, drop
     return (name[0] === "J");
 })
@@ -44,3 +44,23 @@ console.log(filteredArray);
 
 
 // TODO: .reduce(), .indexOf, template literals
+
+// .reduce repeatedly calls the given function, passing in each array item one at a time to affect a cumulative result
+//      The first parameter of the callback function will always be implied to be the cumulative value and starts at 0
+let values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sumValues = values.reduce(sumArray);
+// The reduce function will call this function, passing its own return value in for the first parameter with the next array item until all have been used
+function sumArray(runningTotal, newValue) {
+    return runningTotal + newValue;
+}
+console.log(sumValues);
+
+
+// .indexOf() returns the index value (i.e. position) of a given item in the array.
+const seniority = names.indexOf("James");
+
+
+// Template literals are strings using backticks (`) which can use ${variableName} to insert vdynamic values into the string content.
+const myString = `My favorite Bible character, besides Jesus, is ${names[0]}. He's ${sumValues} years old.`;
+console.log(myString);
+
