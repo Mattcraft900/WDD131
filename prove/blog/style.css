@@ -49,8 +49,8 @@ hr.desktop-only {
     display: none;
 }
 
-.grid-layout {
-    margin: 10px 20px;
+.book-card {
+    margin: 20px;
     display: grid;
     grid-template-columns: 80% 20%;
     row-gap: 10px;
@@ -99,7 +99,7 @@ hr.desktop-only {
         display: none;
     }
 
-    .grid-layout {
+    .book-card {
         grid-template-columns: 30% 2px 70%;
         column-rule: 2px solid #ECC494;
     }
