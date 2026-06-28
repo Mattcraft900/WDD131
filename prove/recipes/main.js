@@ -1,4 +1,3 @@
-
 const recipes = [
 	{
 		author: 'Provo High Culinary Students',
@@ -286,3 +285,70 @@ const recipes = [
 // Begin behavioral code
 // ------------------------------------------------------------------------
 
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search');
+const recipeList = document.getElementById('recipe-list');
+
+// Load a random recipe on the page when it first loads
+document.addEventListener('DOMContentLoaded', (e) => {
+    recipeList.innerHTML = createRecipeCard(recipes[Math.floor(Math.random() * recipes.length)]);
+});
+
+// Filter, sort, and display the recipe list when something is searched
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const searchValue = searchInput.value.toLowerCase();
+    // Filter
+    let filteredRecipes = recipes.filter((recipe) => {
+        return recipe.name.toLowerCase().includes(searchValue)
+            || recipe.description.toLowerCase().includes(searchValue)
+            || searchTagList(recipe.tags, searchValue);
+    });
+    // Sort (w/ helper function)
+    filteredRecipes.sort(sortRecipesByName);
+    // Update the DOM
+    let newRecipeList = '';
+    filteredRecipes.forEach(recipe => {
+        newRecipeList += createRecipeCard(recipe);
+    });
+    recipeList.innerHTML = newRecipeList;
+});
+
+// Sorting helper function
+function sortRecipesByName(a, b) {
+    return a.name.toLowerCase() - b.name.toLowerCase();
+}
+
+function createRecipeCard(recipe) {
+    let ratingHTML = `<span class="recipe-rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">`;
+    for(i=0; i<5; i++) {
+        if (i<recipe.rating) {
+            ratingHTML += '<span aria-hidden="true" class="icon-star">⭐</span>';
+        } else {
+            '<span aria-hidden="true" class="icon-star-empty">☆</span>';
+        }
+    }
+    ratingHTML += '</span>';
+    return `
+        <div class="recipe-card">
+            <img src="${recipe.image}" alt="Image of ${recipe.name}" class="recipe-img">
+            <div class="recipe-info">
+                <div class="recipe-category-badge">dessert</div>
+                <h2 class="recipe-name">${recipe.name}</h2>
+                ${ratingHTML}
+                <p class="recipe-description">${recipe.description}</p>
+            </div>
+        </div>
+    `;
+}
+
+function searchTagList(tags, target) {
+    if (tags != undefined) {   
+        tags.forEach(tag => {
+            if (tag.toLowerCase().includes(target)) {
+                return true;
+            }
+        });
+    }
+    return false;
+}
