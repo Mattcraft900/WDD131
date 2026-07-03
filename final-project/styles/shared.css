@@ -1,5 +1,40 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rye&display=swap');
+
+/* Color & Typography variables */
+:root {
+    /* Color Pallette */
+    --primary1-color: #640C00;
+    --primary2-color: #614433;
+    --secondary1-color: #7F5435;
+    --secondary2-color: #9B7654;
+    --secondary3-color: #B89974;
+    --bg-color: #F0DDB2;
+  
+    /* Fonts */
+    --heading-font: Rye, "Times New Roman", serif;
+    --paragraph-font: Montserrat, Helvetica, sans-serif;
+    --lucy-font: "Indie Flower", Helvetica, sans-serif;
+    --nemah-font: Kalam, Helvetica, sans-serif;
+  
+    /* Pallette utilization */
+    --headline-color-on-white: var(--primary-color); /* headlines on a white background */
+    --headline-color-on-color: var(--bg-color); /* headlines on a colored background */
+    --paragraph-color-on-white: black; /* paragraph text on a white background */
+    --paragraph-color-on-color: var(--bg-color); /* paragraph text on a colored background */
+    --paragraph-background-color: var(--bg-color);
+    --nav-link-color: var(--secondary3-color);
+    --nav-background-color: var(--primary2-color);
+    --nav-hover-link-color: var(--bg-color);
+    --nav-hover-background-color: var(--primary1-color);
+}
+
+
+/* Basic Reset */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
+
