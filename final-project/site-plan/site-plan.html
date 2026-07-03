@@ -19,7 +19,7 @@
         <hr />
         <h2>Overview</h2>
         <h3>Purpose</h3>
-        <p>The purpose of this websiteis to have an easily-accessible and fast-loading knowledge base for the
+        <p>The purpose of this websiteis to have an easily-accessible and fast-loading knowledge base and
             "travelogue" that I'm writing for my group's D&D campaign, called Deathless.</p>
         <!-- change this -->
 
@@ -38,7 +38,7 @@
         <h2>Branding</h2>
         <h3>Website Logo</h3>
         <!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
-        <img src="#" alt="Logo image" />
+        <img src="../images/deathless_symbol.png" alt="Logo image" />
         <hr />
         <h2>Style Guide</h2>
 
@@ -47,23 +47,27 @@
 
         <!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
         Palette URL:
-        <a href="https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c"
-            target="_blank">https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c</a>
+        <a href="https://coolors.co/640c00-7f5435-9b7654-b89974-f0ddb2-614433"
+            target="_blank">https://coolors.co/640c00-7f5435-9b7654-b89974-f0ddb2-614433</a>
 
         <table class="colors">
             <tbody>
                 <tr>
-                    <th>Primary</th>
-                    <th>Secondary</th>
-                    <th>Accent 1</th>
+                    <th>Primary 1</th>
+                    <th>Primary 2</th>
+                    <th>Secondary 1</th>
+                    <th>Secondary 2</th>
+                    <th>Accent 2</th>
                     <th>Accent 2</th>
                 </tr>
                 <!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
                 <tr>
-                    <td class="primary">[#396E94]</td>
-                    <td class="secondary">[#E7C24F]</td>
-                    <td class="accent1">[#A43312]</td>
-                    <td class="accent2"></td>
+                    <td class="primary1">[#640C00]</td>
+                    <td class="primary2">[#7F5435]</td>
+                    <td class="secondary1">[#9B7654]</td>
+                    <td class="secondary2">[#B89974]</td>
+                    <td class="accent1">[#F0DDB2]</td>
+                    <td class="accent2">[#614433]</td>
                 </tr>
             </tbody>
         </table>
@@ -72,14 +76,73 @@
 
         <h3>Pseudocode for your project</h3>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+        <p style="white-space: pre-wrap;">
+            /* ---- All pages ---- */
+            // JS adds event listener to the menu button
+                // toggle "open" state attribute on the button & menu
+                    // CSS tranitions turn the three lines into an X shape
+                    // Menu DOM element appears on-screen due to no longer being hidden
+                        // (Menu nav element is styled much differently and is always displayed on desktop screens)
+                // Vice versa stuff happens when 'X' is clicked, all from the same code
+                // Menu items are all page links to other pages. No URL params needed here specifically
+                // (Use imports from a shared .js file for this to avoid code repitition)
+            
+            /* ---- Homepage ---- */
+            // JS adds event listener to the mug gallery listening for a click event
+                // Event finds the specific character's element and pulls the character name form it
+                // Passes that character name to the URL 
+                // Redirects to the character bio page with those params in tow
+                // Read the param(s) in, use those to search for a specific JS object from the character list
+                // Build that page dynamically using that JS object's data
+
+            /* ---- Travelogue page ---- */
+            // JS adds event listener for when the page first loads
+                // Read travelogue entries in from JS objects
+                // Content within these entries will need to be delineated into DOM elements
+                    // Use regex to find session headings and dates (they will always be consistent - I am the primary writer/editor)
+                    // Nemah's in-line comments are always surrounded by angle brackets, can be identified using regex as well
+                        // Make sure to sanitize/escape these angle brackets so they don't break the DOM structure
+                // Insert all travelogue entries
+                    // (Scale is too small rn to warrant paginization/inifinite scrolling, etc.)
+                    // Default style settings are to include dates and session titles and use stylized formatting
+            // JS adds event listener to 'dates' checkbox
+                // Toggle 'hidden' property of in-game date elements
+                // These elements automatically appear/disappear because of CSS
+            // JS adds event listener to 'session headings' checkbox
+                // Toggle 'hidden' property of session heading elements
+                // These elements automatically appear/disappear because of CSS
+            // JS adds event listener to 'formatting' dropdown
+                // Applies new CSS styles according to the choice
+                // Font families and colors are stored in :root variables
+                // When 'simple' is selected:
+                    // Use uncolored, normal font for Lucy's writing
+                    // Use uncolored, italicized font for Nemah's writing (include the angle brackets)
+                // When 'stylized' is selected:
+                    // Use uncolored, Lucy-specific font for Lucy's writing
+                    // Use maroon Nemah-specific font for Nemah's writing (include the angle brackets)
+                // (Use imports from a shared .js file for this to avoid code repitition)
+            
+            /* ---- Bio selection page ---- */
+            // JS adds event listener to character list element
+                // Use the event object to find the specific character's name who was clicked on
+                // Passes that character name to the URL 
+                // Redirects to the character bio page with those params in tow
+                // Read the param(s) in, use those to search for a specific JS object from the character list
+                // Build that page dynamically using that JS object's data
+            
+            /* ---- Character bio page ---- */
+            // JS adds event listener to character list element
+            // JS adds event listener to 'formatting' dropdown
+                // Applies new CSS styles according to the choice
+                // Font families and colors are stored in :root variables
+                // When 'simple' is selected:
+                    // Use uncolored, normal font for Lucy's writing
+                    // Use uncolored, italicized font for Nemah's writing (include the angle brackets)
+                // When 'stylized' is selected:
+                    // Use uncolored, Lucy-specific font for Lucy's writing
+                    // Use maroon Nemah-specific font for Nemah's writing (include the angle brackets)
+                // (Use imports from a shared .js file for this to avoid code repitition)
+
         </p>
 
         <h3>Wireframes</h3>
@@ -91,6 +154,14 @@
         </p>
         <img src="wireframes/mobile-homepage.jpg" alt="home page wireframe (mobile version)" />
 
+        <h3>Bio Selection Page</h3>
+        <p>
+            I forgot to include a wireframe for this page (I didn't realize the need for it to exist, at first), but it
+            will contain two 'galleries' of characters: one for player characters, and one for non-player characters. 
+            The player character gallery will be pretty much identical to the one found on the homepage for mobile and 
+            desktop; the NPC gallery will be almost identical, but will not include images for any of the characters. 
+            Clicking on any of these entries will take the user to the character bio page with that character's info.
+        </p>
         <h3>Character Bio Page</h3>
         <p>
             The site uses a single page for displaying character bios, populated dynamically from JS objects. For the
