@@ -28,26 +28,26 @@ document.addEventListener('DOMContentLoaded', e => {
     charName.innerText = character.name;
     // Image 
     if (character.img == null || character.img == "") {
-        charImg.classList.append('hidden');
+        charImg.classList.add('hidden');
     } else { 
         charImg.setAttribute('src', `images/${character.img}`);
         charImg.setAttribute('alt', `Image of ${character.name}`);
     }
     // Full Name
     if (character.img == "" || character.full_name == character.name) {
-        charFullName.parentElement.classList.append('hidden');
+        charFullName.parentElement.classList.add('hidden');
     } else { charFullName.innerText = character.full_name; }
     // Age
     if (character.age == "") {
-        charAge.parentElement.classList.append('hidden');
+        charAge.parentElement.classList.add('hidden');
     } else { charAge.innerText = character.age; }
     // Species
     if (character.species == "") {
-        charSpecies.parentElement.classList.append('hidden');
+        charSpecies.parentElement.classList.add('hidden');
     } else { charSpecies.innerText = character.species; }
     // Gender
     if (character.gender == "") {
-        charGender.parentElement.classList.append('hidden');
+        charGender.parentElement.classList.add('hidden');
     } else { charGender.innerText = character.gender; }
 
     // If the character is a party member or an old player character, populate some additional fields as well
@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', e => {
         if (fullDesc != "") {
             charDesc.innerHTML = parseLucyToHTML(fullDesc);
         } else {
-            charDesc.parentElement.classList.append('hidden');
+            charDesc.parentElement.classList.add('hidden');
         }
     } else {
-        charDesc.parentElement.classList.append('hidden');
+        charDesc.parentElement.classList.add('hidden');
     }
 })
 
@@ -89,17 +89,18 @@ formatDropdown.addEventListener('change', () => {
     const lucyText = charDesc.getElementsByClassName('lucy-text');
     const nemahText = charDesc.getElementsByClassName('nemah-text');
     if (formatDropdown.value === "simple") {
-        lucyText.forEach((textPiece) => {
+        console.log(lucyText);
+        Array.from(lucyText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text simple');
         });
-        nemahText.forEach((textPiece) => {
+        Array.from(nemahText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'nemah-text simple');
         });
     } else {
-        lucyText.forEach((textPiece) => {
+        Array.from(lucyText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text stylized');
         });
-        nemahText.forEach((textPiece) => {
+        Array.from(nemahText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'nemah-text stylized');
         });
     }
@@ -109,10 +110,12 @@ formatDropdown.addEventListener('change', () => {
 function classesToString(classes) {
     let classString = "";
     classes.forEach((c) => {
-        if (classString != "") {
-            classString += "/";
+        if (classes[c] != undefined) {
+            if (classString != "") {
+                classString += "/";
+            }
+            classString += classes[c].class + " " + classes[c].level;
         }
-        classString += classes[c].class + " " + classes[c].level;
     });
 }
 
@@ -121,10 +124,11 @@ function classesToString(classes) {
 function parseLucyToHTML(rawText) {
     // This is extremely jank but it works and I don't want to talk about it
     let newText = '<p class="lucy-text stylized">'
-                + rawText.replace('<', '{').replace('>', '}')
-                         .replace('{', '</p><p class="nemah-text stylized">\<')
-                         .replace('}', '\></p><p class="lucy-text stylized">')
-                         .replace('\n', '<br>')
+                + rawText.replaceAll('<', '{').replaceAll('>', '}')
+                         .replaceAll('{', '</p><p class="nemah-text stylized">&lt;')
+                         .replaceAll('}', '&gt;</p><p class="lucy-text stylized">')
+                         .replaceAll('\n', '<br>')
                 + '</p>';
+    console.log(newText);
     return newText;
 }
