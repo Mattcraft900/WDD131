@@ -7,12 +7,35 @@
     <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg" />
     <link rel="manifest" href="favicons/site.webmanifest" />
 
-    <title>Deathless | Character Bios</title>
+    <title>Deathless | Characters</title>
 
     <link rel="stylesheet" href="styles/bio-selection.css">
-    <script type="module" src="bio-selection.js" defer></script>
+    <script type="module" src="js/bio-selection.js" defer></script>
+    <script type="module" src="js/header.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <!-- Header inserted by live server (header.js) -->
+    </header>
+    <main>
+        <section id="party-section" class="character-section">
+            <h2 class="section-header">Party Members</h2>
+            <div id="party-gallery" class="character-gallery">
+                <!-- Character cards inserted by live server (bio-selection.js) -->
+            </div>
+        </section>
+        <section id="opc-section" class="character-section">
+            <h2 class="section-header">Other Player Characters</h2>
+            <div id="opc-gallery" class="character-gallery">
+                <!-- Character cards inserted by live server (bio-selection.js) -->
+            </div>
+        </section>
+        <section id="npc-section" class="character-section">
+            <h2 class="section-header">Non-Player Characters</h2>
+            <div id="npc-gallery" class="character-gallery">
+                <!-- Character cards inserted by live server (bio-selection.js) -->
+            </div>
+        </section>
+    </main>
 </body>
 </html>
