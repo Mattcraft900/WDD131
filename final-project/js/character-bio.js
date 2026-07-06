@@ -122,13 +122,12 @@ function classesToString(classes) {
 // Helper function for formatting Lucy's notes/entries into HTML elements
 // Format the entry text into something that's both delineated for CSS and sanitized for the DOM
 function parseLucyToHTML(rawText) {
-    // This is extremely jank but it works and I don't want to talk about it
+    // This is extremely jank but it works and I don't want to talk about it, lol
     let newText = '<p class="lucy-text stylized">'
                 + rawText.replaceAll('<', '{').replaceAll('>', '}')
                          .replaceAll('{', '</p><p class="nemah-text stylized">&lt;')
                          .replaceAll('}', '&gt;</p><p class="lucy-text stylized">')
                          .replaceAll('\n', '<br>')
                 + '</p>';
-    console.log(newText);
     return newText;
 }

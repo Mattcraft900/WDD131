@@ -37,4 +37,29 @@
     margin: 0;
 }
 
+body {
+    font-size: 16px;
+    font-family: var(--paragraph-font);
+}
+
+
+
+p.lucy-text, p.nemah-text {
+    display: inline;
+}
+p.lucy-text.stylized {
+    font-family: var(--lucy-font);
+}
+p.nemah-text.stylized {
+    font-family: var(--nemah-font);
+    color: #5f163b;
+}
+p.lucy-text.simple {
+    font-family: var(--paragraph-font);
+}
+p.nemah-text.simple {
+    font-family: var(--paragraph-font);
+    font-style: italic;
+}
+
 
