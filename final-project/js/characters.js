@@ -197,3 +197,7 @@ export const characterList = [
         location_last: "Refugee camp outside Sundown City",
     },
 ]
+
+export const partyCharacters = characterList.filter((character) => {
+    return (character != undefined && character.category === "party");
+})

@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function insertHeader() {
     menuList.id = 'menu-list';
     menuList.innerHTML = `
         <li class="nav-link"><a href="index.html">Home</a></li>
+        <li class="nav-link"><a href="travelogue.html">Campaign Log</a></li>
         <li class="nav-link"><a href="bio-selection.html">Characters</a></li>
-        <li class="nav-link"><a href="travelogue.html">Lucy's Travelogue</a></li>
     `;
 
     // Add the event listener to the menu button

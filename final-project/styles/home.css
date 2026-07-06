@@ -1,2 +1,48 @@
-@import 'shared.css';
+@import './shared.css';
 
+
+
+
+/* ---------------------------------------------------------- */
+/* Party members gallery                                      */
+/* ---------------------------------------------------------- */
+#mugs-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+}
+.character-card {
+    background-color: var(--accent-color);
+    border-radius: 15px;
+    padding: 15px;
+}
+/* .centered {
+    grid-column: 1/3;
+    margin: 0 auto;
+} */
+.character-img {
+    border: solid 2px var(--primary1-color);
+    border-radius: 50%;
+}
+.character-name {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary1-color);
+    font-size: 1.4em;
+    margin: 0.2em;
+}
+.character-snippet {
+    text-align: center;
+}
+
+#deathless-symbol-container {
+    width: calc(min(50%, 256px));
+    display: block;
+    margin: 0 auto;
+}
+.spacer {
+    display: block;
+    height: 10vh;
+}
