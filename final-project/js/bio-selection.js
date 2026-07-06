@@ -31,7 +31,7 @@ export function buildCharacterCard(character) {
     if (character.category === "party") {
         newCard += `
             <div class="character-card party-character-card">
-                <img src="${character.img}" alt="Image of ${character.name}" class="character-img">
+                <img src="images/${character.name.trim().toLowerCase()}-small.jpg" alt="Image of ${character.name}" class="character-img">
         `
     } else if (character.category === "opc") {
         newCard += `<div class="character-card opc-character-card">`
@@ -41,7 +41,8 @@ export function buildCharacterCard(character) {
     newCard += `
             <h3 class="character-name">${character.name}</h3>
             <p class="character-snippet">${character.snippet}</p>
-        </div></a>
+        </div>
+        </a>
     `
     return newCard;
 }

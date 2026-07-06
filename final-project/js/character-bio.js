@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', e => {
         charImg.setAttribute('alt', `Image of ${character.name}`);
     }
     // Full Name
-    if (character.img == "" || character.full_name == character.name) {
+    if (character.full_name == "" || character.full_name == character.name) {
         charFullName.parentElement.classList.add('hidden');
     } else { charFullName.innerText = character.full_name; }
     // Age
@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', e => {
 formatDropdown.addEventListener('change', () => {
     const lucyText = charDesc.getElementsByClassName('lucy-text');
     const nemahText = charDesc.getElementsByClassName('nemah-text');
+    // If simple is selected, update the elements' classes to match
     if (formatDropdown.value === "simple") {
         console.log(lucyText);
         Array.from(lucyText).forEach((textPiece) => {
@@ -96,6 +97,7 @@ formatDropdown.addEventListener('change', () => {
         Array.from(nemahText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'nemah-text simple');
         });
+    // If stylized is selected, update the elements' classes to match
     } else {
         Array.from(lucyText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text stylized');
