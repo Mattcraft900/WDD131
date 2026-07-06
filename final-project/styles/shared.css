@@ -9,7 +9,7 @@
     --secondary1-color: #7F5435;
     --secondary2-color: #9B7654;
     --secondary3-color: #B89974;
-    --bg-color: #F0DDB2;
+    --offwhite: #fff2d3;
   
     /* Fonts */
     --heading-font: Rye, "Times New Roman", serif;
@@ -19,31 +19,106 @@
   
     /* Pallette utilization */
     --headline-color-on-white: var(--primary-color); /* headlines on a white background */
-    --headline-color-on-color: var(--bg-color); /* headlines on a colored background */
+    --headline-color-on-color: var(--offwhite); /* headlines on a colored background */
     --paragraph-color-on-white: black; /* paragraph text on a white background */
-    --paragraph-color-on-color: var(--bg-color); /* paragraph text on a colored background */
-    --paragraph-background-color: var(--bg-color);
+    --paragraph-color-on-color: var(--offwhite); /* paragraph text on a colored background */
+    --paragraph-background-color: var(--offwhite);
     --nav-link-color: var(--secondary3-color);
     --nav-background-color: var(--primary2-color);
-    --nav-hover-link-color: var(--bg-color);
+    --nav-hover-link-color: var(--secondary3-color);
     --nav-hover-background-color: var(--primary1-color);
 }
 
-
-/* Basic Reset */
+/* ---------------------------------------------------------- */
+/* Basic Reset / base stylings                                */
+/* ---------------------------------------------------------- */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-
 body {
-    font-size: 16px;
     font-family: var(--paragraph-font);
+    position: relative;
+}
+main {
+    background-color: var(--offwhite);
+    color: var(--paragraph-color-on-white);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: inherit;
+    text-decoration: underline;
+}
+img {
+    max-width: 100%;
+}
+
+
+/* ---------------------------------------------------------- */
+/* Header content                                             */
+/* ---------------------------------------------------------- */
+header {
+    background-color: var(--nav-background-color);
+    color: var(--nav-link-color);
+    text-align: right;
+}
+/* Mobile-only menu button */
+#menu-btn {
+    background-color: inherit;
+    border: none;
+    padding: 10px;
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+#menu-btn div {
+    width: 100%;
+    height: 20%;
+    background-color: var(--nav-link-color);
+    margin: 10% 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+#menu-btn:hover {
+    cursor: pointer; 
+    background-color: var(--nav-hover-background-color);
+}
+#menu-btn:hover div {
+    background-color: var(--nav-hover-link-color);
+}
+.opened .bar1 { transform: translate(0, 9px) rotate(-45deg); }
+.opened .bar2 { opacity: 0; }
+.opened .bar3 { transform: translate(0, -9px) rotate(45deg); }
+/* Nav menu/links (mobile) */
+nav {
+    display: none; /* Hidden by default on mobile */
+    background-color: var(--nav-background-color);
+    border-bottom: solid 5px var(--secondary1-color);
+    width: calc(max(vw, 600px));
+}
+nav.shown {
+    display: block;
+}
+#menu-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+#menu-list li {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    padding: 0.75em 2em;
+    border-top: solid 3px var(--secondary1-color);
 }
 
 
 
+
+/* ---------------------------------------------------------- */
+/* Lucy & Nemah handwriting                                   */
+/* ---------------------------------------------------------- */
 p.lucy-text, p.nemah-text {
     display: inline;
 }
@@ -63,3 +138,21 @@ p.nemah-text.simple {
 }
 
 
+
+
+/* ---------------------------------------------------------- */
+/* DESKTOP VIEW                                               */
+/* ---------------------------------------------------------- */
+@media screen and (min-width: 500px) {
+    #menu-btn {
+        display: none;
+    }
+    nav {
+        display: block;
+    }
+    #menu-list {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+}

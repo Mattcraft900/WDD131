@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function insertHeader() {
         <div class="bar2"></div>
         <div class="bar3"></div>
     `;
-    const navMenu = document.createElement('nav');
+    const nav = document.createElement('nav');
     const menuList = document.createElement('ul');
     menuList.id = 'menu-list';
     menuList.innerHTML = `
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function insertHeader() {
 
     // Add the event listener to the menu button
     menuBtn.addEventListener('click', e => {
-        menuBtn.attributes.toggle('opened');
-        navMenu.classList.toggle('hidden');
+        menuBtn.classList.toggle('opened');
+        nav.classList.toggle('shown');
     });
     
     // Attach the elements to the DOM
     header.appendChild(menuBtn);
-    header.appendChild(navMenu);
-    navMenu.appendChild(menuList);
+    header.appendChild(nav);
+    nav.appendChild(menuList);
 });
