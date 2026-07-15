@@ -23,11 +23,12 @@
         
         <!-- Image -->
         <img src="#" alt="Image of the character" id="character-img">
+        <hr>
 
         <section id="stats-section">
             <h2 id="stats-heading" class="section-heading">Character Stats</h2>
             
-            <div id="stat-list">
+            <div id="stats-list">
 
                 <!-- Full Name -->
                 <div class="stat-div">
@@ -57,20 +58,24 @@
                 <!-- If OPC, include: original player name -->
                 </div>
         </section>
+        <hr>
 
         <!-- Description section -->
         <section id="description-section">
             <h2 id="description-heading" class="section-heading">Lucy's Notes:</h2>
             <!-- Formatting selection -->
-            <label for="format-dropdown">Formatting:</label>
-            <select name="desc-format" id="format-dropdown" class="dropdown">
-                <option value="simple">Simple</option>
-                <option value="stylized" selected>Stylized</option>
-            </select>
+            <div id="dropdown-div">
+                <label for="format-dropdown">Formatting:</label>
+                <select name="desc-format" id="format-dropdown" class="dropdown">
+                    <option value="simple">Simple</option>
+                    <option value="stylized" selected>Stylized</option>
+                </select>
+            </div>
             <div id="character-description">
                 <!-- Content inserted by live server (character-bio.js) -->
             </div>
         </section>
+        <hr>
     </main>
 </body>
 </html>

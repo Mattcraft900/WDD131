@@ -13,8 +13,7 @@ export const characterList = [
         snippet: "Level 6 Warlock of the Fiend",
         img: "lucy.jpg",
         description: [
-            "That's me! Yours truly. I don't have a last name. Or a birthday. <It was somewhere around September, 20 years ago from what I can guess> I guess that's because I grew up on the streets of New Haven with my brother. We didn't have parents, but we did fine for ourselves. We were happy. ~~It was the only life I ever knew, at least until~~",
-            "",
+            "That's me! Yours truly. I don't have a last name. Or a birthday. <It was somewhere around September, 20 years ago from what I can guess> I guess that's because I grew up on the streets of New Haven with my brother. We didn't have parents, but we did fine for ourselves. We were happy. It was the only life I ever knew, at least until...",
             "",
             "I'll come back to this one later maybe",
             "<Lucy is a great addition to the team and the only one who seems to care how everyone else is doing. She is a light to our otherwise somber party. I know she’s been through a lot that none of us can truly understand with the shroud, but I hope she knows she’s safe with us and that nothing— not even death— can stop us from trying to help her get back what she has lost.>",

@@ -2,7 +2,7 @@ import { characterList } from './characters.js';
 
 const charName = document.getElementById('character-name');
 const charImg = document.getElementById('character-img');
-const charStatsSection = document.getElementById('stats-section');
+const charStatsList = document.getElementById('stats-list');
 const charFullName = document.getElementById('full-name');
 const charAge = document.getElementById('age');
 const charSpecies = document.getElementById('species');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
     // If the character is a party member or an old player character, populate some additional fields as well
     if (character.category === "party") {
-        charStatsSection.innerHTML += `
+        charStatsList.innerHTML += `
             <div class="stat-div">
                 <label for="player" class="stat-name">Player: </label>
                 <p id="player" class="stat-value">${character.player}</p>
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', e => {
             </div>
         `;
     } else if (character.category === "opc") {
-        charStatsSection.innerHTML += `
+        charStatsList.innerHTML += `
             <div class="stat-div">
                 <label for="player" class="stat-name">Original Player: </label>
                 <p id="player" class="stat-value">${character.player}</p>
@@ -138,7 +138,7 @@ function parseLucyToHTML(rawText) {
                 + rawText.replaceAll('<', '{').replaceAll('>', '}')
                          .replaceAll('{', '</p><p class="nemah-text stylized">&lt;')
                          .replaceAll('}', '&gt;</p><p class="lucy-text stylized">')
-                         .replaceAll('\n', '<br>')
+                         .replaceAll('\n', '<br><br>')
                 + '</p>';
     return newText;
 }

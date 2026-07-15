@@ -1,11 +1,5 @@
 @import './shared.css';
 
-
-/* Add some breathing room to the bottom of the page */
-main {
-    padding-bottom: 100px;
-}
-
 /* Message that displays in any section w/out characters */
 .empty-message {
     grid-column: 1/3;
