@@ -44,7 +44,6 @@ section>p {
 .page-link p {
     display: inline;
     text-decoration: underline;
-    text-underline-offset: 2px; /* Yeah, I'm that guy */
 }
 
 

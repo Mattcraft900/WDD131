@@ -18,29 +18,47 @@
         <!-- Header inserted by live server (header.js) -->
     </header>
     <main>
+        <!-- Name -->
         <h1 id="character-name"></h1>
+        
+        <!-- Image -->
         <img src="#" alt="Image of the character" id="character-img">
+
         <section id="stats-section">
             <h2 id="stats-heading" class="section-heading">Character Stats</h2>
-            <div class="stat-div">
-                <label for="full-name" class="stat-name">Full Name: </label>
-                <p id="full-name" class="stat-value"></p>
-            </div>
-            <div class="stat-div">
-                <label for="age" class="stat-name">Age: </label>
-                <p id="age" class="stat-value"></p>
-            </div>
-            <div class="stat-div">
-                <label for="species" class="stat-name">Species: </label>
-                <p id="species" class="stat-value"></p>
-            </div>
-            <div class="stat-div">
-                <label for="gender" class="stat-name">Gender: </label>
-                <p id="gender" class="stat-value"></p>
-            </div>
-            <!-- If party, include: classes & level, player name -->
-            <!-- If OPC, include: original player name -->
+            
+            <div id="stat-list">
+
+                <!-- Full Name -->
+                <div class="stat-div">
+                    <label for="full-name" class="stat-name">Full Name: </label>
+                    <p id="full-name" class="stat-value"></p>
+                </div>
+
+                <!-- Age -->
+                <div class="stat-div">
+                    <label for="age" class="stat-name">Age: </label>
+                    <p id="age" class="stat-value"></p>
+                </div>
+
+                <!-- Species -->
+                <div class="stat-div">
+                    <label for="species" class="stat-name">Species: </label>
+                    <p id="species" class="stat-value"></p>
+                </div>
+
+                <!-- Gender -->
+                <div class="stat-div">
+                    <label for="gender" class="stat-name">Gender: </label>
+                    <p id="gender" class="stat-value"></p>
+                </div>
+
+                <!-- If party, include: classes & level, player name -->
+                <!-- If OPC, include: original player name -->
+                </div>
         </section>
+
+        <!-- Description section -->
         <section id="description-section">
             <h2 id="description-heading" class="section-heading">Lucy's Notes:</h2>
             <!-- Formatting selection -->

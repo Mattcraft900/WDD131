@@ -10,16 +10,24 @@ const charGender = document.getElementById('gender');
 const charDesc = document.getElementById('character-description');
 const formatDropdown = document.getElementById('format-dropdown');
 
+// Read in the URL parameters to know which character to display
 const parsedUrl = new URL(window.location.href);
 const charID = parsedUrl.searchParams.get("id");
 const character = characterList.find((character) => {
     return character.id == charID;
 });
 
-// Upon page load, populate the data
+// Upon page load, populate the page data
 document.addEventListener('DOMContentLoaded', e => {
+    // If the URL gives invalid parameters, replace the whole page with a simple error message.
     if (character == undefined) {
-        document.querySelector('main').innerHTML = '<p id="char-not-found">Oops! Looks like this record doesn\'t exist.</p>';
+        document.querySelector('main').innerHTML = `
+            <div id="char-not-found">
+                <p>Oops!<br>Looks like this record doesn\'t exist.</p>
+                <a href="bio-selection.html" id="go-back">Back to Character List</a>
+            </div>
+        `;
+
         return;
     }
 
@@ -90,7 +98,6 @@ formatDropdown.addEventListener('change', () => {
     const nemahText = charDesc.getElementsByClassName('nemah-text');
     // If simple is selected, update the elements' classes to match
     if (formatDropdown.value === "simple") {
-        console.log(lucyText);
         Array.from(lucyText).forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text simple');
         });
@@ -111,14 +118,16 @@ formatDropdown.addEventListener('change', () => {
 // Helper function for displaying character classes
 function classesToString(classes) {
     let classString = "";
-    classes.forEach((c) => {
-        if (classes[c] != undefined) {
+    classes.forEach(c => {
+        if (c != undefined) {
             if (classString != "") {
                 classString += "/";
             }
-            classString += classes[c].class + " " + classes[c].level;
+            let className = c.class.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            classString += className + " " + c.level;
         }
     });
+    return classString;
 }
 
 // Helper function for formatting Lucy's notes/entries into HTML elements

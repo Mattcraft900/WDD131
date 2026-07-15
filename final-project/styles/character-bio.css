@@ -1,2 +1,35 @@
 @import './shared.css';
 
+
+/* ---------------------------------------------------------- */
+/* -- Invalid URL Page                                     -- */
+/* ---------------------------------------------------------- */
+#char-not-found {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+#char-not-found p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#char-not-found a {
+    font-size: 1.25em;
+    color: var(--primary2-color);
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------- */
+/* -- Stats Section                                        -- */
+/* ---------------------------------------------------------- */
+.stat-name {
+    display: inline;
+    font-weight: bold;
+}
+.stat-value {
+    display: inline;
+}
