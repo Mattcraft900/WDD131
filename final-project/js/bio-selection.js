@@ -1,12 +1,15 @@
 import { characterList } from './characters.js';
+import { buildCharacterCard } from './character-card.js';
 
 const partyGallery = document.getElementById('party-gallery');
-const npcGallery = document.getElementById('opc-gallery');
-const opcGallery = document.getElementById('npc-gallery');
+const opcGallery = document.getElementById('opc-gallery');
+const npcGallery = document.getElementById('npc-gallery');
+const allGalleries = [...document.getElementsByClassName('character-gallery')];
 
 
-// Add all the characters to the page in the appropriate spots
+// As soon as the page loads,
 document.addEventListener('DOMContentLoaded', e => {
+    // Add all the characters to the page in the appropriate spots
     characterList.forEach((character) => {
         if (character != undefined) {
             const charCard = buildCharacterCard(character);
@@ -19,31 +22,15 @@ document.addEventListener('DOMContentLoaded', e => {
             }
         }
     });
+    // If any section is empty, put a default message in it instead
+    const emptyMessage = document.createElement('p');
+    emptyMessage.classList.add('empty-message', 'lucy-text', 'stylized');
+    emptyMessage.innerText = "No characters here yet. :)";
+    allGalleries.forEach(gallery => {
+        if ([...gallery.querySelectorAll('*')].length === 0) {
+            gallery.appendChild(emptyMessage);
+        }
+    });
 });
 
-// Helper function for building a character card
-export function buildCharacterCard(character) {
-    if (character === undefined) {
-        return "";
-    }
-
-    let newCard = `<a href="character-bio.html?id=${character.id}">`;
-    if (character.category === "party") {
-        newCard += `
-            <div class="character-card party-character-card">
-                <img src="images/${character.name.trim().toLowerCase()}-small.jpg" alt="Image of ${character.name}" class="character-img">
-        `
-    } else if (character.category === "opc") {
-        newCard += `<div class="character-card opc-character-card">`
-    } else {
-        newCard += `<div class="character-card npc-character-card">`
-    }
-    newCard += `
-            <h3 class="character-name">${character.name}</h3>
-            <p class="character-snippet">${character.snippet}</p>
-        </div>
-        </a>
-    `
-    return newCard;
-}
 

@@ -19,7 +19,7 @@
     --nemah-font: Kalam, Helvetica, sans-serif;
   
     /* Pallette utilization */
-    --headline-color-on-white: var(--primary-color); /* headlines on a white background */
+    --headline-color-on-white: var(--primary1-color); /* headlines on a white background */
     --headline-color-on-color: var(--offwhite); /* headlines on a colored background */
     --paragraph-color-on-white: black; /* paragraph text on a white background */
     --paragraph-color-on-color: var(--offwhite); /* paragraph text on a colored background */
@@ -30,8 +30,9 @@
     --nav-hover-background-color: var(--primary1-color);
 }
 
+
 /* ---------------------------------------------------------- */
-/* Basic Reset / base stylings                                */
+/* -- Basic Reset / base stylings                          -- */
 /* ---------------------------------------------------------- */
 * {
     box-sizing: border-box;
@@ -45,7 +46,7 @@ body {
 }
 main {
     color: var(--paragraph-color-on-white);
-    padding: 0 20px;
+    padding: 0 30px;
 }
 a, a:hover, a:focus {
     color: inherit;
@@ -54,11 +55,18 @@ a, a:hover, a:focus {
 img {
     max-width: 100%;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: bold;
+    text-align: center;
+    color: var(--headline-color-on-white);
+}
 
 
 /* ---------------------------------------------------------- */
-/* Header content                                             */
+/* -- Header content                                       -- */
 /* ---------------------------------------------------------- */
+/* Header itself */
 header {
     background-color: var(--nav-background-color);
     color: var(--nav-link-color);
@@ -112,6 +120,81 @@ nav.shown {
 }
 
 
+/* ---------------------------------------------------------- */
+/* -- Misc                                                 -- */
+/* ---------------------------------------------------------- */
+.section-heading {
+    margin: 30px 0 15px;
+    text-decoration: underline;
+    font-size: 1.75em;
+}
+hr {
+    border: none;
+    background-color: var(--secondary2-color);
+    color: var(--secondary2-color);
+    width: 90%;
+    height: 2px;
+    margin: 20px auto;
+}
+
+
+/* ---------------------------------------------------------- */
+/* -- Character gallery/cards                              -- */
+/* ---------------------------------------------------------- */
+/* Gallery conatiner */
+.character-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* Character cards */
+.character-card {
+    background-color: var(--accent-color);
+    border-radius: 15px;
+    padding: 15px;
+}
+.character-img {
+    border: solid 2px var(--primary1-color);
+    border-radius: 50%;
+}
+.character-name {
+    font-size: 1.4em;
+    margin: 0.2em;
+}
+.character-snippet {
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------- */
+/* -- Lucy & Nemah handwriting                             -- */
+/* ---------------------------------------------------------- */
+p.lucy-text, p.nemah-text {
+    display: inline;
+}
+/* stylized */
+p.lucy-text.stylized {
+    font-family: var(--lucy-font);
+}
+p.nemah-text.stylized {
+    font-family: var(--nemah-font);
+    color: #5f163b;
+}
+/* simple */
+p.lucy-text.simple {
+    font-family: var(--paragraph-font);
+}
+p.nemah-text.simple {
+    font-family: var(--paragraph-font);
+    font-style: italic;
+}
+
+
+/* ---------------------------------------------------------- */
+/* -- Footer content                                       -- */
+/* ---------------------------------------------------------- */
 footer {
     background-color: var(--offwhite);
 }
@@ -125,35 +208,10 @@ footer {
 
 
 
-
 /* ---------------------------------------------------------- */
-/* Lucy & Nemah handwriting                                   */
+/* -- DESKTOP VIEW                                         -- */
 /* ---------------------------------------------------------- */
-p.lucy-text, p.nemah-text {
-    display: inline;
-}
-p.lucy-text.stylized {
-    font-family: var(--lucy-font);
-}
-p.nemah-text.stylized {
-    font-family: var(--nemah-font);
-    color: #5f163b;
-}
-p.lucy-text.simple {
-    font-family: var(--paragraph-font);
-}
-p.nemah-text.simple {
-    font-family: var(--paragraph-font);
-    font-style: italic;
-}
-
-
-
-
-/* ---------------------------------------------------------- */
-/* DESKTOP VIEW                                               */
-/* ---------------------------------------------------------- */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
     #menu-btn {
         display: none;
     }
