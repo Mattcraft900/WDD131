@@ -1,9 +1,9 @@
-export const entries = [
+export const travelogue = [
     {
-        "session-date": "Prologue",
+        "session_date": "Prologue",
         "content": [
             {
-                "game-date": null,
+                "game_date": null,
                 "text": [
                     "Hi, my name is Lucy and this is my journal. Kind of. Maybe. My friend Nemah is teaching me how to write, so I thought it'd be good practice if I started keeping a record of everything that happens to us. Like, to the Undying Lights, I mean. (I think that's what our name should be, by the way, and if I'm the one writing it, I get to choose. I think.) <You… sure wrote it.> So I guess this is kinda like a diary, but like for all of us? Except I think people put like, real deep secret stuff in their diary, and I ain't doing that! That's what my little tome is for. <Tome?>",
                     "Anyhow, I don't think anyone else is keeping a record of what's happening, but I kinda think someone should. I know Enza at least would appreciate that. I feel bad for him, what with… everything that's happened and all. I thought maybe someday our story could be told all over, just like that Gentleman George guy I've heard him talk about. <Do not idolize those racist stories.> So why not start writing it myself?",
@@ -14,10 +14,10 @@ export const entries = [
         ],
     },
     {
-        "session-date": "6.13.26 - \"Saint Dane\"",
+        "session_date": "6.13.26 - \"Saint Dane\"",
         "content": [
             {
-                "game-date": "7 / 13 / 568",
+                "game_date": "7 / 13 / 568",
                 "text": [
                     "Today Nemah taught me how to write. It takes me a long time to write anything right now because I am still learning. Once I get a little better I want to write a proper introduction, but this is enough for now.",
                     "Right now, we're on a fairy ride down to Saint Dane (apparently a fairy is also a kind of boat?), <Ferry, they're spelled different.> but it will take us a few days to get there. This is the calmest time we've had since… since these guys found me, I think.",
@@ -28,14 +28,14 @@ export const entries = [
                 ],
             },
             {
-                "game-date": "7 / 15 / 568",
+                "game_date": "7 / 15 / 568",
                 "text": [
                     "We get off the boat today, in a few hours. Everyone's been… quiet. Luark is more gloomy than usual; his wife might be in Shen Ora, and I can tell he's worried about what it'd be like to finally meet her again after all this time. On the other hand, Enza is basically petrified by the thought of seeing his parents again, but I just know it'll be so good for him. He needs this. I'm mostly worried about Chesco; he's pointed out a few times that most of the goblins in Saint Dane (which is a lot of goblins, I think) would want to hurt him, and it's rare for him to stay focused on a topic like that - especially without his usual big grin. Nemah has been teaching me more readin' and writin' skills. <Hopefully we just pass through unnoticed.>",
                     "My brain hurts, but I didn't write anything yesterday (I just doodled instead), and Nemah scolded me for it and said I have no reason to skip out on practicing today. Personally, I can think of plenty of reasons. <If you want to learn, you need practice.> But… the way she said it… I guess it reminds me of Luke.",
                 ],
             },
             {
-                "game-date": "7 / 17 / 568 [or later]",
+                "game_date": "7 / 17 / 568 [or later]",
                 "text": [
                     "Things did NOT go well in Saint Dane. They went very, very bad, actually. <Very bad.>",
                     "When we arrived, Enza was lookin' downright like a ghost, the poor thing. He recognized the terrain enough that he led us toward the city proper, then to the front of a little restaurant. There were ambystomans and goblins everywhere. I held Chesco's hand because I was afraid he might take off running if I didn't, the way he was shaking and all. Poor thing.",
@@ -48,10 +48,10 @@ export const entries = [
         ],
     },
     {
-        "session-date": "6.27.26 - \"The Orphanage\"",
+        "session_date": "6.27.26 - \"The Orphanage\"",
         "content": [
             {
-                "game-date": null,
+                "game_date": null,
                 "text": [
                     "All of us split up at that point. Enza started walking determinedly toward… wherever he came from, and Nemah started after him. I was holding Chesco's hand, and he started slowly walking forward, so I stuck with him. Luark stayed behind, though. I never did ask him what he was doing. I don't know if I should.",
                     "Anyway, by the time Chesco and I got to the manor, we had lost sight of Nemah, but there was a clear path of carnage through the front gates and in through the doors. Dead goblins, mostly. Chesco was shaking like a trapped cicada. I wasn't feeling very good myself.",

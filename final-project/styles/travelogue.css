@@ -1,0 +1,52 @@
+@import './shared.css';
+
+main {
+    font-size: 1.2em;
+}
+
+/* ---------------------------------------------------------- */
+/* -- Intro                                                -- */
+/* ---------------------------------------------------------- */
+#intro-blurb {
+    text-align: justify;
+}
+
+/* ---------------------------------------------------------- */
+/* -- Format settings                                      -- */
+/* ---------------------------------------------------------- */
+#format-settings {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    margin: 30px 0 15px;
+    padding: 15px;
+}
+#checkboxes {
+    display: flex;
+    justify-content: space-evenly;
+}
+#dropdown-div {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: 10px;
+}
+#format-dropdown {
+    font-size: 1em;
+}
+
+/* ---------------------------------------------------------- */
+/* -- Travelogue Entries                                   -- */
+/* ---------------------------------------------------------- */
+.session-title {
+    text-decoration: underline;
+    margin: 30px 0 20px;
+} 
+.session-title.simple { font-family: var(--pargraph-font); }
+.session-title.stylized { font-family: var(--heading-font); }
+.game-date {
+    color: var(--paragraph-color-on-white);
+    text-align: left;
+    margin: 1em 0;
+}
+.game-date.simple { font-family: var(--pargraph-font); }
+.game-date.stylized { font-family: var(--lucy-font); }

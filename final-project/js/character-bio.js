@@ -1,4 +1,5 @@
 import { characterList } from './characters.js';
+import { parseLucyToHTML } from './travelogue.js';
 
 const charName = document.getElementById('character-name');
 const charImg = document.getElementById('character-img');
@@ -93,27 +94,27 @@ document.addEventListener('DOMContentLoaded', e => {
 })
 
 // Event listener for the formatting dropdown
-formatDropdown.addEventListener('change', () => {
-    const lucyText = charDesc.getElementsByClassName('lucy-text');
-    const nemahText = charDesc.getElementsByClassName('nemah-text');
+formatDropdown.addEventListener('change', (e) => {
+    const lucyText = [...charDesc.getElementsByClassName('lucy-text')];
+    const nemahText = [...charDesc.getElementsByClassName('nemah-text')];
     // If simple is selected, update the elements' classes to match
     if (formatDropdown.value === "simple") {
-        Array.from(lucyText).forEach((textPiece) => {
+        lucyText.forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text simple');
         });
-        Array.from(nemahText).forEach((textPiece) => {
+        nemahText.forEach((textPiece) => {
             textPiece.setAttribute('class', 'nemah-text simple');
         });
     // If stylized is selected, update the elements' classes to match
     } else {
-        Array.from(lucyText).forEach((textPiece) => {
+        lucyText.forEach((textPiece) => {
             textPiece.setAttribute('class', 'lucy-text stylized');
         });
-        Array.from(nemahText).forEach((textPiece) => {
+        nemahText.forEach((textPiece) => {
             textPiece.setAttribute('class', 'nemah-text stylized');
         });
     }
-})
+});
 
 // Helper function for displaying character classes
 function classesToString(classes) {
@@ -128,17 +129,4 @@ function classesToString(classes) {
         }
     });
     return classString;
-}
-
-// Helper function for formatting Lucy's notes/entries into HTML elements
-// Format the entry text into something that's both delineated for CSS and sanitized for the DOM
-function parseLucyToHTML(rawText) {
-    // This is extremely jank but it works and I don't want to talk about it, lol
-    let newText = '<p class="lucy-text stylized">'
-                + rawText.replaceAll('<', '{').replaceAll('>', '}')
-                         .replaceAll('{', '</p><p class="nemah-text stylized">&lt;')
-                         .replaceAll('}', '&gt;</p><p class="lucy-text stylized">')
-                         .replaceAll('\n', '<br><br>')
-                + '</p>';
-    return newText;
 }
