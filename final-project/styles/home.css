@@ -62,6 +62,9 @@ section>p {
 /* ############++++++++++--------------++++++++++############ */
 @media screen and (min-width: 600px) {
 
+    #title{
+        font-size: 3.5em;
+    }
     #intro-links {
         flex-direction: row;
         justify-content: center;
