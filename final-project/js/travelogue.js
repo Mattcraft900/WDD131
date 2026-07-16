@@ -77,7 +77,7 @@ formatDropdown.addEventListener('change', (e) => {
 
 // Helper function for formatting Lucy/Nemah's entries into HTML elements
 // Format the entry text into something that's both delineated for CSS and sanitized for the DOM
-export function parseLucyToHTML(rawText) {
+function parseLucyToHTML(rawText) {
     // This is extremely jank but it works and I don't want to talk about it, lol
     let newText = '<p class="lucy-text stylized">'
                 + rawText.replaceAll('<', '{').replaceAll('>', '}')

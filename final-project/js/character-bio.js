@@ -1,5 +1,4 @@
 import { characterList } from './characters.js';
-import { parseLucyToHTML } from './travelogue.js';
 
 const charName = document.getElementById('character-name');
 const charImg = document.getElementById('character-img');
@@ -129,4 +128,17 @@ function classesToString(classes) {
         }
     });
     return classString;
+}
+
+// Helper function for formatting Lucy/Nemah's entries into HTML elements
+// Format the entry text into something that's both delineated for CSS and sanitized for the DOM
+function parseLucyToHTML(rawText) {
+    // This is extremely jank but it works and I don't want to talk about it, lol
+    let newText = '<p class="lucy-text stylized">'
+                + rawText.replaceAll('<', '{').replaceAll('>', '}')
+                         .replaceAll('{', '</p><p class="nemah-text stylized">&lt;')
+                         .replaceAll('}', '&gt;</p><p class="lucy-text stylized">')
+                         .replaceAll('\n', '<br><br>')
+                + '</p>';
+    return newText;
 }

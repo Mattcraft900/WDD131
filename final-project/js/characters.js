@@ -71,7 +71,7 @@ export const characterList = [
         height: "",
         weight: "",
         category: "party",
-        snippet: "Level 6 Inquisitor Rogue",
+        snippet: "Level 6 Investigator Rogue",
         img: "luark.jpg",
         description: [
             "Okay, so I'm pretty sure my friend Pill has told me that there like, at least a couple of books that've been written about Luark already, so I might not need to say all that much here, but it wouldn't feel right if I left him out. And besides, maybe the books are wrong, so I'm gonna write about him anyway!",
@@ -86,7 +86,7 @@ export const characterList = [
             {
                 class: "rogue",
                 level: 6,
-                subclass: "inquisitor"
+                subclass: "investigator"
             }
         ],
     },
