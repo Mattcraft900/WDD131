@@ -38,6 +38,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-size: 20px;
 }
 body {
     font-family: var(--paragraph-font);
@@ -140,7 +141,6 @@ hr {
     border: none;
     background-color: var(--secondary2-color);
     color: var(--secondary2-color);
-    width: 90%;
     height: 2px;
     margin: 20px auto;
 }
@@ -162,16 +162,20 @@ hr {
     background-color: var(--accent-color);
     border-radius: 15px;
     padding: 15px;
+    height: 100%;
 }
-.character-img {
+.character-card .character-img {
+    width: 240px;
     border: solid 2px var(--primary1-color);
     border-radius: 50%;
+    display: block;
+    margin: 0 auto;
 }
-.character-name {
+.character-card .character-name {
     font-size: 1.4em;
     margin: 0.2em;
 }
-.character-snippet {
+.character-card .character-snippet {
     text-align: center;
 }
 
@@ -208,6 +212,7 @@ footer {
 }
 .attribution {
     text-align: center;
+    font-size: 0.8em;
 }
 .attribution a {
     color: var(--secondary1-color);
@@ -216,10 +221,17 @@ footer {
 
 
 
-/* ---------------------------------------------------------- */
-/* -- DESKTOP VIEW                                         -- */
-/* ---------------------------------------------------------- */
+/* ############++++++++++--------------++++++++++############ */
+/* ##                  DESKTOP FORMATTING                  ## */
+/* ############++++++++++--------------++++++++++############ */
 @media screen and (min-width: 600px) {
+    
+    /* Basics */
+    * {
+        font-size: 24px;
+    }
+
+    /* Header */
     #menu-btn {
         display: none;
     }
@@ -236,8 +248,21 @@ footer {
         text-decoration: underline;
         background-color: var(--nav-hover-background-color);
     }
+
+    /* Main */
     main {
-        padding: 0 10%;
+        padding: 0 10% 100px;
     }
+    .character-gallery {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 10px;
+    }
+    .character-card:hover .character-img {
+        border-width: 4px;
+    }
+    .character-card:hover .character-name {
+        text-decoration: underline;
+    }
+
 }
 

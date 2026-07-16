@@ -12,6 +12,9 @@
     align-items: center;
     text-align: center;
 }
+#char-not-found a:hover {
+    color: var(--secondary2-color);
+}
 #char-not-found p {
     font-size: 1.5em;
     font-weight: bold;
@@ -32,6 +35,7 @@
 }
 #character-img {
     border-radius: 20px;
+    height: 600px;
     max-height: 60vh;
     display: block;
     margin: 0 auto;
@@ -47,6 +51,7 @@
     column-gap: 1em;
     max-width: 80%;
     margin: 0 auto;
+    margin-bottom: 30px;
     font-size: 1.2em;
 }
 .stat-name {
@@ -72,5 +77,23 @@
 /* ---------------------------------------------------------- */
 #character-description {
     margin: 20px 0 40px;
-    font-size: 1.2em;
+    text-align: justify;
+}
+
+
+/* ############++++++++++--------------++++++++++############ */
+/* ##                  DESKTOP FORMATTING                  ## */
+/* ############++++++++++--------------++++++++++############ */
+@media screen and (min-width: 600px) {
+
+    #character-name {
+        font-size: 3.5em;
+    }
+    #character-description {
+        margin-bottom: 60px;
+    }
+    #character-description p {
+        font-size: 1.2em;
+    }
+
 }

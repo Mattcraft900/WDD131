@@ -1,9 +1,5 @@
 @import './shared.css';
 
-main {
-    font-size: 1.2em;
-}
-
 /* ---------------------------------------------------------- */
 /* -- Intro                                                -- */
 /* ---------------------------------------------------------- */
@@ -19,14 +15,20 @@ main {
     border-radius: 10px;
     margin: 30px 0 15px;
     padding: 15px;
+    font-size: 18px;
 }
 #checkboxes {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+}
+.checkbox-div {
+    align-items: center;
 }
 #dropdown-div {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.5em;
     margin-top: 10px;
 }
@@ -40,6 +42,7 @@ main {
 .session-title {
     text-decoration: underline;
     margin: 30px 0 20px;
+    font-size: 1.2em;
 } 
 .session-title.simple { font-family: var(--pargraph-font); }
 .session-title.stylized { font-family: var(--heading-font); }
@@ -47,6 +50,31 @@ main {
     color: var(--paragraph-color-on-white);
     text-align: left;
     margin: 1em 0;
+    font-size: 1.2em;
 }
 .game-date.simple { font-family: var(--pargraph-font); }
 .game-date.stylized { font-family: var(--lucy-font); }
+
+
+/* ############++++++++++--------------++++++++++############ */
+/* ##                  DESKTOP FORMATTING                  ## */
+/* ############++++++++++--------------++++++++++############ */
+@media screen and (min-width: 600px) {
+
+    #format-settings {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 4em;
+    }
+    #checkboxes {
+        gap: 2em;
+    }
+    #dropdown-div {
+        margin-top: 0;
+    }
+    #travelogue-text p { font-size: 1.2em; }
+    .session-title, .game-date { font-size: 1.4em; }
+
+}

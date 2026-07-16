@@ -6,3 +6,17 @@
     text-align: center;
     font-size: 1.25em;
 }
+
+
+/* ############++++++++++--------------++++++++++############ */
+/* ##                  DESKTOP FORMATTING                  ## */
+/* ############++++++++++--------------++++++++++############ */
+@media screen and (min-width: 600px) {
+
+    .empty-message {
+        grid-column: 1/6;
+        text-align: center;
+        font-size: 1.25em;
+    }
+
+}
