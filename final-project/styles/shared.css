@@ -24,7 +24,7 @@
     --paragraph-color-on-white: black; /* paragraph text on a white background */
     --paragraph-color-on-color: var(--offwhite); /* paragraph text on a colored background */
     --paragraph-background-color: var(--offwhite);
-    --nav-link-color: var(--secondary3-color);
+    --nav-link-color: var(--accent-color);
     --nav-background-color: var(--primary2-color);
     --nav-hover-link-color: var(--secondary3-color);
     --nav-hover-background-color: var(--primary1-color);
@@ -111,6 +111,9 @@ nav {
 }
 nav.shown {
     display: block;
+}
+nav a {
+    font-weight: normal;
 }
 #menu-list {
     display: flex;
@@ -237,3 +240,4 @@ footer {
         padding: 0 10%;
     }
 }
+

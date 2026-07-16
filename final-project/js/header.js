@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function insertHeader() {
     // Build the header's inner DOM elements
     const menuBtn = document.createElement('button');
     menuBtn.id = 'menu-btn';
+    menuBtn.ariaLabel = 'Menu';
     menuBtn.innerHTML = `
         <div class="bar1"></div>
         <div class="bar2"></div>

@@ -6,6 +6,11 @@
 /* ---------------------------------------------------------- */
 #title-box {
     position: relative;
+    max-height: 50vh;
+}
+#title-img{
+    width: 100%;
+    max-height: 50vh;
     object-fit: cover;
     object-position: center;
 }
